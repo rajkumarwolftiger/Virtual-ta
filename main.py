@@ -2,6 +2,14 @@ from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 import base64
 import json
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI()
 
