@@ -4,14 +4,14 @@ import base64
 import json
 from fastapi.middleware.cors import CORSMiddleware
 
+app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-app = FastAPI()
 
 # Load scraped data
 with open("tds_posts.json", "r") as f:
