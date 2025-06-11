@@ -12,7 +12,9 @@ with open("tds_posts.json", "r") as f:
 class QuestionRequest(BaseModel):
     question: str
     image: str = None
-
+@app.get("/")
+def read_root():
+    return {"message": "Virtual TA is live!"}
 @app.post("/api/")
 async def answer_question(data: QuestionRequest):
     # TODO: Use LLM or keyword match for real answer generation
